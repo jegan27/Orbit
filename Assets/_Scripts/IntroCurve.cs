@@ -23,13 +23,14 @@ public class IntroCurve : MonoBehaviour {
 		m_Timer += Time.fixedDeltaTime;
 		
 		for (float i = 0f; i< 150f; i++) {
-			m_renderer.SetPosition((int)i, new Vector3((i/25f), Mathf.Sin((i/25) * m_fFrequency + (m_Timer * m_fSpeed)* m_fHeight), 0f));
-		};
-
-		if(Input.GetKeyDown(KeyCode.Return))
-		{
-			Application.LoadLevel("SineWave_Level_1");
+			m_renderer.SetPosition ((int)i, new Vector3 ((i / 25f), Mathf.Sin ((i / 25) * m_fFrequency + (m_Timer * m_fSpeed) * m_fHeight), 0f));
 		}
+		;
+	}
+
+	public void loadGame()
+	{
+		Application.LoadLevel("SineWave_Level_1");
 	}
 
 }

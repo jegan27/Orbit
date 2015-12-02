@@ -84,7 +84,7 @@ public class MenuScript : MonoBehaviour
 	public void StartLevel4 () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("SineWave_Intro"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("SineWave_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 	public void StartLevel5 () //this function will be used on our Play button

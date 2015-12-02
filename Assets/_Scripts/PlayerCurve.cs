@@ -11,8 +11,10 @@ public class PlayerCurve : MonoBehaviour
 	public float fFrequency = 1f;
 	public float fHeight = 3f;
 
-	bool UsingBoard = false;
 	InputHandler manager;
+
+	public Color c1 = Color.red;
+	public Color c2 = new Color(0, 1, 1, 1);
 
 	float min = 10;
 	float max = 30;
@@ -21,6 +23,9 @@ public class PlayerCurve : MonoBehaviour
 	void Start () 
 	{
 		m_renderer = GetComponent<LineRenderer>();
+		m_renderer.material = new Material(Shader.Find("Particles/Additive"));
+		m_renderer.SetColors(c2,c1 );
+
 		manager = GetComponent<InputHandler> ();
 	}
 	
@@ -34,25 +39,7 @@ public class PlayerCurve : MonoBehaviour
 			m_renderer.SetPosition((int)i, new Vector3((i/25f), Mathf.Sin((i/25) * fFrequency + (m_Timer * fSpeed) * fHeight), 0f));
 		};
 
-		if (!UsingBoard) 
-		{
-			if (Input.GetKey (KeyCode.F)) 
-			{
-				if (Input.GetKeyDown (KeyCode.LeftArrow))
-					fFrequency -= 0.1f;
-				if (Input.GetKeyDown (KeyCode.RightArrow))
-					fFrequency += 0.1f;
-
-			}
-			if (Input.GetKey (KeyCode.S)) 
-			{
-				if (Input.GetKeyDown (KeyCode.LeftArrow))
-					fSpeed -= 0.1f;
-				if (Input.GetKeyDown (KeyCode.RightArrow))
-					fSpeed += 0.1f;
-			}
-		} 
-		else 
+		if (manager.usingBoard) 
 		{
 			float alpha = manager.DialPosition/255;
 			if(manager.Button1)
@@ -65,6 +52,19 @@ public class PlayerCurve : MonoBehaviour
 			}
 		}
 			
+	}
+
+	public void changeFrequency(float freqChange)
+	{
+
+		fFrequency += freqChange;
+
+	}
+	public void changeSpeed(float speedChange)
+	{
+		
+		fSpeed += speedChange;
+		
 	}
 
 }

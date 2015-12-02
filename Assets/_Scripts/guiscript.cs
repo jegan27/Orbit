@@ -3,23 +3,33 @@ using System.Collections;
 
 public class guiscript : MonoBehaviour {
 
-	string Freq = "Adjusting Fequency";
-	string Speed = "Adjusting Speed";
-	string guistart = "Hold 'S' and use the Arrow Keys to adjust the Speed\nHold 'F' and use the Arrow Keys to adjust the Frequency";
-	
+	string IncFreq = "Increase Frequency";
+	string DecFreq = "Decrease Frequency";
+	string IncSpeed = "Increase Speed";
+	string DecSpeed = "Decrease Speed";
+
+	PlayerCurve pcurvescript;
+
+	void Start()
+	{
+		pcurvescript = GameObject.FindGameObjectWithTag ("pcurve").GetComponent<PlayerCurve> ();
+	}
 
 	void OnGUI()
 	{
-
-		if (Input.GetKey (KeyCode.F)) 
+		if (GUI.Button (new Rect (Screen.width / 2 - 730, Screen.height / 2 + 290, 200, 60), IncFreq)) 
 		{
-			GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 + 300, 400, 100), Freq);
-		} else if (Input.GetKey (KeyCode.S)) 
+			pcurvescript.changeFrequency(0.1f);
+		}
+		if (GUI.Button (new Rect (Screen.width / 2 - 730, Screen.height / 2 + 410, 200, 60), DecFreq)) 
 		{
-			GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 + 300, 400, 100), Speed);
-		} else 
-		{
-			GUI.Label(new Rect(Screen.width/2 - 150, Screen.height/2 + 300, 400, 100), guistart);
+			pcurvescript.changeFrequency(-0.1f);
+		}
+		if (GUI.Button (new Rect (Screen.width / 2 + 510, Screen.height / 2 + 290, 200, 60), IncSpeed)) {
+			pcurvescript.changeSpeed(0.1f);
+		}
+		if (GUI.Button (new Rect (Screen.width / 2 + 510, Screen.height / 2 + 410, 200, 60), DecSpeed)) {
+			pcurvescript.changeSpeed(-0.1f);
 		}
 	}
 
