@@ -73,7 +73,7 @@ public class MenuScript : MonoBehaviour
 	public void StartLevel2 () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("Asteriods_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel (9); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 
