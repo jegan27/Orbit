@@ -39,7 +39,7 @@ public class Done_PlayerController : MonoBehaviour
 	}
 	void FixedUpdate ()
 	{
-		if (GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputHandler>().UsingBoard)
+		if (GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputHandler>().usingBoard)
 		{
 			moveHorizontal = Mathf.Lerp (-1, 1, GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputHandler>().JoystickX / 255);
 			//moveVertical = Mathf.Lerp (-1, 1, GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputHandler>().JoystickY / 255);

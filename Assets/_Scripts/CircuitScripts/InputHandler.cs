@@ -27,7 +27,11 @@ public class InputHandler : MonoBehaviour {
 	private TcpClient Client;
 	// Use this for initialization
 	void Start () {
-		Client = new TcpClient ("192.168.4.1", 80);
+		if (usingBoard)
+		{
+				Client = new TcpClient ("192.168.4.1", 80);
+		}
+		
 	}
 	public int JoystickX;
 	public int JoystickY;

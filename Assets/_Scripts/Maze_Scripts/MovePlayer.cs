@@ -13,7 +13,7 @@ public class MovePlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-		handler = GetComponent<InputHandler> ();
+		handler = GameObject.FindGameObjectWithTag("InputHandler").GetComponent<InputHandler> ();
     }
 
 	public void Update()

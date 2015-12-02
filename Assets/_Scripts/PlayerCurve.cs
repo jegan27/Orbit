@@ -26,7 +26,7 @@ public class PlayerCurve : MonoBehaviour
 		m_renderer.material = new Material(Shader.Find("Particles/Additive"));
 		m_renderer.SetColors(c2,c1 );
 
-		manager = GetComponent<InputHandler> ();
+		manager = GameObject.FindGameObjectWithTag ("InputHandler").GetComponent<InputHandler> ();
 	}
 	
 	// Update is called once per frame

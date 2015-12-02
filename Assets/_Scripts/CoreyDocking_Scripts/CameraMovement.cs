@@ -24,19 +24,9 @@ public class CameraMovement : MonoBehaviour {
 	{	//camera movement
 
 		if (!boardManager.usingBoard) {
-			if (Input.GetKey (KeyCode.RightArrow)) {
-				transform.Translate (new Vector3 (speed * Time.deltaTime, 0, 0));
-			}
-			if (Input.GetKey (KeyCode.LeftArrow)) {
-				transform.Translate (new Vector3 (-speed * Time.deltaTime, 0, 0));
-			}
-			if (Input.GetKey (KeyCode.DownArrow)) {
-				transform.Translate (new Vector3 (0, -speed * Time.deltaTime, 0));
-			}
-			if (Input.GetKey (KeyCode.UpArrow)) {
-				transform.Translate (new Vector3 (0, speed * Time.deltaTime, 0));
-			}
 
+			transform.Translate (new Vector3 (speed * Time.deltaTime * CameraMovementAxes.x, speed * Time.deltaTime * CameraMovementAxes.y, 0));
+		}
 			if (boardManager.usingBoard) {
 				if (boardManager.JoystickX < 110)
 				{
@@ -55,7 +45,7 @@ public class CameraMovement : MonoBehaviour {
 					transform.Translate (new Vector3 (0, speed * Time.deltaTime, 0));
 				}
 			}
-		}
+
 	
 		//x axis
 		if (transform.position.x <= -1.0f) {

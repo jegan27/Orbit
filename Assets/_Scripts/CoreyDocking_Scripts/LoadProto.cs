@@ -9,8 +9,7 @@ public class LoadProto : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public void Update () {
-		if (Input.GetKeyDown (KeyCode.Return))
-			Application.LoadLevel ("Docking_Level_2");
+	public void OnButtonPress () {
+		Application.LoadLevel ("Docking_Level_2");
 	}
 }
