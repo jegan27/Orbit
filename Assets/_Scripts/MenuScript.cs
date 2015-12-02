@@ -12,6 +12,7 @@ public class MenuScript : MonoBehaviour
 	public Button startText3;
 	public Button startText4;
 	public Button startText5;
+	public Button startText6;
 
 	void Start ()
 		
@@ -24,7 +25,7 @@ public class MenuScript : MonoBehaviour
 		startText3 = startText.GetComponent <Button> ();
 		startText4 = startText.GetComponent <Button> ();
 		startText5 = startText.GetComponent <Button> ();
-
+		startText6 = startText.GetComponent <Button> ();
 		quitMenu.enabled = false;
 		
 	}
@@ -40,6 +41,7 @@ public class MenuScript : MonoBehaviour
 		startText3.enabled = false;
 		startText4.enabled = false;
 		startText5.enabled = false;
+		startText6.enabled = false;
 	}
 	
 	public void NoPress() //this function will be used for our "NO" button in our Quit Menu
@@ -53,6 +55,7 @@ public class MenuScript : MonoBehaviour
 		startText3.enabled = true;
 		startText4.enabled = true;
 		startText5.enabled = true;
+		startText6.enabled = true;
 	}
 	
 	public void StartLevel () //this function will be used on our Play button
@@ -84,7 +87,7 @@ public class MenuScript : MonoBehaviour
 	public void StartLevel4 () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("SineWave_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("SineWave_Intro"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 	public void StartLevel5 () //this function will be used on our Play button
@@ -93,6 +96,14 @@ public class MenuScript : MonoBehaviour
 		Application.LoadLevel ("Circuit_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
+	public void StartLevel6 () //this function will be used on our Play button
+		
+	{
+		Application.LoadLevel ("ColourMatching_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		
+	}
+
+
 
 	public void ExitGame () //This function will be used on our "Yes" button in our Quit menu
 		
