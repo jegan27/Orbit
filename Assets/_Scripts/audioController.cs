@@ -30,11 +30,14 @@ public class audioController : MonoBehaviour
 	
 	bool beepGuard = false;
 	bool pressGuard = false;
+
+
+	new InputHandler boardManager;
 	
 	// Use this for initialization
 	void Start () 
 	{
-
+		boardManager = GameObject.FindGameObjectWithTag ("InputHandler").GetComponent<InputHandler> ();
 
 		if (sliderStatic == null)
 		{
@@ -64,30 +67,37 @@ public class audioController : MonoBehaviour
 
 		m_fTimer = Mathf.Repeat(m_fTimer + Time.fixedDeltaTime, m_fBeat);
 		Debug.Log (m_fTimer);
-		
+
+
+		if (boardManager.usingBoard) {
+			sliderStatic.value = Mathf.Clamp((float)(boardManager.JoystickX - 128) /12.8f, -10f, 10f);
+			sliderBuzz.value = Mathf.Clamp((float)(boardManager.JoystickY - 128) /12.8f, -10f, 10f);
+		}
+
 		float volumePerc = ((10f + sliderStatic.value) - (10f + static0)) / (-(10f + static0));
 		volumePerc *= Mathf.Sign (volumePerc);
 		audioStatic.volume = volumePerc;
 		
-		if (sliderStatic.value >= static0) {
-			sliderStatic.value += 0.03f * volumePerc;
-		} else {
-			sliderStatic.value -= 0.03f * volumePerc;;
+		if (!boardManager.usingBoard) {
+			if (sliderStatic.value >= static0) {
+				sliderStatic.value += 0.03f * volumePerc;
+			} else {
+				sliderStatic.value -= 0.03f * volumePerc;
+				;
+			}
 		}
-		
-		
-		
 		volumePerc = ((10f + sliderBuzz.value) - (10f + buzz0)) / (-(10f + buzz0));
 		volumePerc *= Mathf.Sign (volumePerc);
 		audioBuzz.volume = volumePerc;
 
-		/*
-		if (sliderBuzz.value >= buzz0) {
-			sliderBuzz.value += 0.030f * volumePerc;
-		} else {
-			sliderBuzz.value -= 0.030f * volumePerc;;
+		if (!boardManager.usingBoard) {
+			if (sliderBuzz.value >= buzz0) {
+				sliderBuzz.value += 0.030f * volumePerc;
+			} else {
+				sliderBuzz.value -= 0.030f * volumePerc;
+				;
+			}
 		}
-		*/
 
 		if (isStaticLow() && isBuzzLow()) {
 			if (m_fTimer <= 0.3f)
