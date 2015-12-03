@@ -15,17 +15,29 @@ public class CameraMovement : MonoBehaviour {
 		currentPos.y = (float)Random.Range (-2, 2);
 		transform.position = currentPos;
 
-
 		boardManager = GameObject.FindGameObjectWithTag ("InputHandler").GetComponent<InputHandler> ();
 
-		//transform.position.y = (float)Random.Range (-2, 2);
 	}
 		void Update()
 	{	//camera movement
 
 		if (!boardManager.usingBoard) {
+			//keyboard controls
+			if (Input.GetKey (KeyCode.RightArrow)) {
+				transform.Translate (new Vector3 (speed * Time.deltaTime, 0, 0));
+			}
+			if (Input.GetKey (KeyCode.LeftArrow)) {
+				transform.Translate (new Vector3 (-speed * Time.deltaTime, 0, 0));
+			}
+			if (Input.GetKey (KeyCode.DownArrow)) {
+				transform.Translate (new Vector3 (0, -speed * Time.deltaTime, 0));
+			}
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				transform.Translate (new Vector3 (0, speed * Time.deltaTime, 0));
+			}
 
-			transform.Translate (new Vector3 (speed * Time.deltaTime * CameraMovementAxes.x, speed * Time.deltaTime * CameraMovementAxes.y, 0));
+			//buttons on screen controls
+			//transform.Translate (new Vector3 (speed * Time.deltaTime * CameraMovementAxes.x, speed * Time.deltaTime * CameraMovementAxes.y, 0));
 		}
 			if (boardManager.usingBoard) {
 				if (boardManager.JoystickX < 110)

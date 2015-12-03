@@ -9,7 +9,6 @@ public class LockOn : MonoBehaviour {
 	public AudioClip winSound;
 	GUIStyle largeFont;
 	GUIStyle mediumFont;
-	
 
 	new InputHandler boardManager;
 
@@ -50,11 +49,11 @@ public class LockOn : MonoBehaviour {
 
 		GUI.color = Color.white;
 		GUI.Label (new Rect(100, 100, 200, 100), "Use Arrow Keys to Move", mediumFont);
-		GUI.Label (new Rect (100, 125, 200, 100),"Use 'Space Bar' to Confirm", mediumFont);   
+		GUI.Label (new Rect (100, 125, 200, 100),"Press 'Confim' to Latch", mediumFont);   
 	}
 	//check win function
 	public void CheckWin (){
-		if (dist <= 5.0015f)
+		if (dist <= 3.005f)
 		{
 			//if win
 			GetComponent<AudioSource>().PlayOneShot(winSound);
@@ -62,7 +61,7 @@ public class LockOn : MonoBehaviour {
 		}
 
 		//if lose life or gameover
-		else if (dist >= 5.0015f)
+		else if (dist >= 3.005f)
 		{
 			GetComponent<AudioSource>().PlayOneShot(failSound);
 			lives -= 1;
