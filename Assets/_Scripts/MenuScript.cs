@@ -68,13 +68,13 @@ public class MenuScript : MonoBehaviour
 		
 	{
 		//Application.LoadLevel(Random.Range( 4,6)); //this will load our first level from our build settings. "1" is the second scene in our game
-		Application.LoadLevel("Maze_Level_2");
+		Application.LoadLevel(4);
 		
 	}
 	public void Asteroids () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel (8); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel (10); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 

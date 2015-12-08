@@ -10,6 +10,6 @@ public class MazeTut : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void OnButtonPress () {
-		Application.LoadLevel ("Maze_Level_2");
+		Application.LoadLevel (4);
 	}
 }
