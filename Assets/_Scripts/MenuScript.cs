@@ -58,45 +58,46 @@ public class MenuScript : MonoBehaviour
 		startText6.enabled = true;
 	}
 	
-	public void StartLevel () //this function will be used on our Play button
+	public void Docking () //this function will be used on our Play button
 		
 	{
 		Application.LoadLevel (1); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
-	public void StartLevel1 () //this function will be used on our Play button
+	public void Maze () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel(Random.Range( 4,6)); //this will load our first level from our build settings. "1" is the second scene in our game
+		//Application.LoadLevel(Random.Range( 4,6)); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel(4);
 		
 	}
-	public void StartLevel2 () //this function will be used on our Play button
+	public void Asteroids () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel (9); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel (10); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 
-	public void StartLevel3 () //this function will be used on our Play button
+	public void Audio () //this function will be used on our Play button
 		
 	{
 		Application.LoadLevel ("Audio_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 
-	public void StartLevel4 () //this function will be used on our Play button
+	public void SineWave () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("SineWave_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("SineWave_Tutorial"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
-	public void StartLevel5 () //this function will be used on our Play button
+	public void Circuit () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("Circuit_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("Circuit_Tutorial"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
-	public void StartLevel6 () //this function will be used on our Play button
+	public void ColourMatching () //this function will be used on our Play button
 		
 	{
 		Application.LoadLevel ("ColourMatching_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
@@ -111,5 +112,10 @@ public class MenuScript : MonoBehaviour
 		Application.Quit(); //this will quit our game. Note this will only work after building the game
 		
 	}
-	
+
+	public void LoadCorey()
+	{
+		Application.LoadLevel (8);
+	}
+
 }

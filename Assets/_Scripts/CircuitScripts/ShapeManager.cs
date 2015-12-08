@@ -18,7 +18,7 @@ public class ShapeManager : MonoBehaviour {
 	Material material4;
 	Material material5;
 	
-	bool[] Cubes =  new bool[] {false,false,false,false,false,false,false};
+	bool[] Cubes =  new bool[] {false,false,false,false,false,false,false,false};
 
 
 	// Use this for initialization
@@ -172,7 +172,7 @@ public class ShapeManager : MonoBehaviour {
 			Cubes[2] = true;
 		} else if (currentIndex == 7 && currentObj) {
 			currentObj.GetComponent<MeshRenderer> ().material = material4;
-			Cubes[8] = true;
+			Cubes[7] = true;
 		} else if (currentObj) {
 			currentObj.GetComponent<MeshRenderer> ().material = material5;
 
