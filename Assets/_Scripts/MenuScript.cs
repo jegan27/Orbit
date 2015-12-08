@@ -94,7 +94,7 @@ public class MenuScript : MonoBehaviour
 	public void Circuit () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel ("Circuit_Level_1"); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("Circuit_Tutorial"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 	public void ColourMatching () //this function will be used on our Play button
