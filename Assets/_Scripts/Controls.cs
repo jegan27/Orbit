@@ -109,7 +109,7 @@ public class Controls : MonoBehaviour {
 	void Update () {
 		if (gameState == GameState.START)
 		{
-			displayText.text = "COLOUR MATCH\nUP/DOWN: Change Colour\nRIGHT/LEFT: Change Panel";
+			displayText.text = "Spectral Analysis\nMatch the Three Panels with the Target Panel\nUse the Slider to adust the Panel\nThe Side Buttons change which Panel you are currently using\n\nTap To Start";
 			if (Input.anyKeyDown)
 			{
 				gameState = GameState.PLAYING;
