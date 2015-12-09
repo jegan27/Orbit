@@ -61,20 +61,20 @@ public class MenuScript : MonoBehaviour
 	public void Docking () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel (1); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("Docking Tutorial"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 	public void Maze () //this function will be used on our Play button
 		
 	{
 		//Application.LoadLevel(Random.Range( 4,6)); //this will load our first level from our build settings. "1" is the second scene in our game
-		Application.LoadLevel(4);
+		Application.LoadLevel ("Maze_Level_2_Tutorial");
 		
 	}
 	public void Asteroids () //this function will be used on our Play button
 		
 	{
-		Application.LoadLevel (10); //this will load our first level from our build settings. "1" is the second scene in our game
+		Application.LoadLevel ("Asteriods_tutorial"); //this will load our first level from our build settings. "1" is the second scene in our game
 		
 	}
 
@@ -115,7 +115,7 @@ public class MenuScript : MonoBehaviour
 
 	public void LoadCorey()
 	{
-		Application.LoadLevel (8);
+		Application.LoadLevel ("Docking_Tute_2");
 	}
 
 }

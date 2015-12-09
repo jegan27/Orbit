@@ -4,12 +4,14 @@ using System.Collections;
 public class press : MonoBehaviour
 {
 
-	
-
-	
-	public void LoadScene(int level)
+	public void LoadScene()
 	{
-
-		Application.LoadLevel(level);
+		Application.LoadLevel("Maze_Level_2");
 	}
+
+	public void LoadAsteroids()
+	{
+		Application.LoadLevel("Asteroids_Level_1");
+	}
+
 	}
