@@ -53,7 +53,7 @@ public class LockOn : MonoBehaviour {
 	}
 	//check win function
 	public void CheckWin (){
-		if (dist <= 3.005f)
+		if (dist <= 3.001f)
 		{
 			//if win
 			GetComponent<AudioSource>().PlayOneShot(winSound);
@@ -61,7 +61,7 @@ public class LockOn : MonoBehaviour {
 		}
 
 		//if lose life or gameover
-		else if (dist >= 3.005f)
+		else if (dist >= 3.001f)
 		{
 			GetComponent<AudioSource>().PlayOneShot(failSound);
 			lives -= 1;
