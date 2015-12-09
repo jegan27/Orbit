@@ -12,23 +12,29 @@ public class exitScript : MonoBehaviour {
 			
 		}
 		
-		// Update is called once per frame
-		void Update()
-		{
-			countdownTimer -= Time.deltaTime;
-		}
-		void OnGUI()
-		{
-			if (countdownTimer > 0)
-			{
-				GUI.Label(new Rect(100, 100, 200, 100), "Time Remaining : " + (int)countdownTimer);
-			}
-			else
-			{
-				GUI.Label(new Rect(100, 100, 100, 100), "!!Time's Up!!");
-				
-				Application.LoadLevel(0);
-			}
-			
-		}
+//		// Update is called once per frame
+//		void Update()
+//		{
+//			countdownTimer -= Time.deltaTime;
+//		}
+//		void OnGUI()
+//		{
+//			if (countdownTimer > 0)
+//			{
+//				GUI.Label(new Rect(100, 100, 200, 100), "Time Remaining : " + (int)countdownTimer);
+//			}
+//			else
+//			{
+//				GUI.Label(new Rect(100, 100, 100, 100), "!!Time's Up!!");
+//				
+//				Application.LoadLevel(0);
+//			}
+//			
+//		}
+
+
+	 public void ToMenu ()
+	{
+		Application.LoadLevel ("Menu");
 	}
+}

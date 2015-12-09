@@ -19,7 +19,7 @@ public class Done_GameController : MonoBehaviour
 	private bool gameOver;
 
 
-	float timeRemaining = 40.0f;
+	float timeRemaining = 23.0f;
 
 	void Start ()
 	{

@@ -16,7 +16,7 @@ public class LockOn : MonoBehaviour {
 		largeFont = new GUIStyle ();
 		mediumFont = new GUIStyle ();
 
-		largeFont.fontSize = 32;
+		largeFont.fontSize = 22;
 		mediumFont.fontSize = 18;
 		largeFont.normal.textColor = Color.red;
 		mediumFont.normal.textColor = Color.white;
@@ -45,7 +45,7 @@ public class LockOn : MonoBehaviour {
 	}
 	//GUI lives and tutorial
 	void OnGUI (){
-		GUI.Label (new Rect(1300, 140, 200, 100), "Tries Remaining: " + (int)lives, largeFont);
+		GUI.Label (new Rect(1000, 140, 200, 100), "Tries Remaining: " + (int)lives, largeFont);
 
 		GUI.color = Color.white;
 		GUI.Label (new Rect(100, 100, 200, 100), "Use Arrow Keys to Move", mediumFont);

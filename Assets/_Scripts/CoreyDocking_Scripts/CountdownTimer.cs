@@ -14,7 +14,7 @@ public class CountdownTimer : MonoBehaviour {
 
 		largeFont = new GUIStyle ();
 		largeFont.normal.textColor = Color.white;
-		largeFont.fontSize = 32;
+		largeFont.fontSize = 22;
 	
 
 		StartCoroutine(PlaySoundEvery(1.0f, 30));
@@ -36,11 +36,11 @@ public class CountdownTimer : MonoBehaviour {
 	void OnGUI (){
 	if (timeRemaining > 0) {
 			GUI.color = Color.white;
-			GUI.Label (new Rect (1300, 100, 200, 100), "Time Remaining: " + (int)timeRemaining, largeFont);
+			GUI.Label (new Rect (1000, 100, 200, 100), "Time Remaining: " + (int)timeRemaining, largeFont);
 		} 
 		else {
-			GUI.Label (new Rect(1300, 100, 100, 100), "Time's Up", largeFont);
-			Application.LoadLevel (1);
+			GUI.Label (new Rect(1000, 100, 100, 100), "Time's Up", largeFont);
+			Application.LoadLevel ("Fail");
 		}
 	}		
 }
