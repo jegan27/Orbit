@@ -14,7 +14,7 @@ public class audioController : MonoBehaviour
 	
 	public AudioSource audioBeep;
 
-	public Text text;
+
 
 	public int counter = 0;
 	
@@ -24,7 +24,7 @@ public class audioController : MonoBehaviour
 	float buzz0;
 	float static0;
 
-	float timeLeft = 25.0f;
+
 	
 	int correctBeats = 0;
 	
@@ -37,6 +37,8 @@ public class audioController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+
+
 		boardManager = GameObject.FindGameObjectWithTag ("InputHandler").GetComponent<InputHandler> ();
 
 		if (sliderStatic == null)
@@ -58,12 +60,7 @@ public class audioController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		timeLeft -= Time.deltaTime;
-		text.text = "time left:" + Mathf.Round (timeLeft); 
-		if(timeLeft < 0)
-		{
-			Application.LoadLevel("Fail");
-		}
+
 
 		m_fTimer = Mathf.Repeat(m_fTimer + Time.fixedDeltaTime, m_fBeat);
 		Debug.Log (m_fTimer);
