@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TimeRemainingTimer : MonoBehaviour
 {
-    float countdownTimer = 30;
+    float countdownTimer = 60;
 
     // Use this for initialization
     void Start()

@@ -33,9 +33,6 @@ public class ShapeManager : MonoBehaviour {
 
 		boardManager = GameObject.FindGameObjectWithTag ("InputHandler").GetComponent <InputHandler>();
 
-
-		//button1.visible = (!boardManager.usingBoard)
-
 	}
 
 	public void OnBack()
