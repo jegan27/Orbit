@@ -29,6 +29,10 @@ public class MenuScript : MonoBehaviour
 		int randomIndex = Random.Range(0, researchLevels.Length); 
 		Application.LoadLevel(researchLevels[randomIndex]); 
 	}
+	public void Minigames()
+	{
+		Application.LoadLevel ("Minigames");
+	}
 	public void ExitGame ()
 	{
 		Application.Quit();
