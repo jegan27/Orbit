@@ -24,7 +24,7 @@ public class Done_GameController : MonoBehaviour
 	void Start ()
 	{
 		gameOver = false;
-
+		Time.timeScale = 1;
 		restartText.text = "";
 		gameOverText.text = "";
 		eventSuccessfulText.text = "";
@@ -61,6 +61,11 @@ public class Done_GameController : MonoBehaviour
 		}
 	}
 	
+	public void SetLevelReload()
+	{
+		ScreenOrientation.NeedsReload = true;
+	}
+
 
 	public void GameOver ()
 	{
@@ -79,6 +84,7 @@ public class Done_GameController : MonoBehaviour
 
 			eventSuccessfulText.text = "Mission Successful ";
 			Time.timeScale = 0;
+			gameOver = true;
 			Application.LoadLevel("Pass");
 		}
 	}

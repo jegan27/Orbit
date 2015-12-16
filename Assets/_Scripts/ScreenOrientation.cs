@@ -9,5 +9,5 @@ public class ScreenOrientation : MonoBehaviour {
 		Screen.orientation = UnityEngine.ScreenOrientation.Portrait;
 	}
 	
-
+	public static bool NeedsReload = false;
 }
