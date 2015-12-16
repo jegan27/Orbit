@@ -62,7 +62,7 @@ public class CubeHandler : MonoBehaviour {
 	{
 		if (currentObj.transform.eulerAngles.y == 0) {
 			CurrentOrientation = CubeDirection.CUBE_RIGHT;
-		} else if (currentObj.transform.eulerAngles.y > 90 && currentObj.transform.eulerAngles.y < 91) {
+		} else if (currentObj.transform.eulerAngles.y >=89 && currentObj.transform.eulerAngles.y < 91) {
 			CurrentOrientation = CubeDirection.CUBE_DOWN;
 		} else if (currentObj.transform.eulerAngles.y == 180) {	
 			CurrentOrientation = CubeDirection.CUBE_LEFT;

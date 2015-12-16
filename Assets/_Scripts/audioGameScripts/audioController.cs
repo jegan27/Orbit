@@ -51,7 +51,7 @@ public class audioController : MonoBehaviour
 		buzz0 = Random.Range (-8f, 8f);
 		static0 = Random.Range (-8f, 8f);
 		
-		m_fBeat = (float)Random.Range (3, 7) * 0.25f;
+		m_fBeat = (float)Random.Range (3, 7) * 0.5f;
 		Debug.Log (m_fBeat);
 		Debug.Log (m_fTimer);
 		
@@ -112,7 +112,7 @@ public class audioController : MonoBehaviour
 				
 			}
 		}
-		m_Scorebox.text = string.Format ("Beats Left: {0}", 5 - correctBeats);
+		m_Scorebox.text = string.Format ("Beats Left: {0}", 3 - correctBeats);
 
 	}
 	
@@ -137,7 +137,7 @@ public class audioController : MonoBehaviour
 	public void isButtonBeingPressed()
 	{
 		if (isStaticLow () && isBuzzLow ()) {
-			if (m_fTimer <= 0.25f && !pressGuard) {
+			if (m_fTimer <= 0.5f && !pressGuard) {
 				correctBeats++;
 				counter ++;
 				pressGuard = true;
@@ -145,7 +145,7 @@ public class audioController : MonoBehaviour
 
 
 		}
-		if(counter ==5)
+		if(counter ==3)
 		{
 			Application.LoadLevel("Pass");
 		}
